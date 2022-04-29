@@ -9,6 +9,7 @@ systemctl daemon-reload
 sed -i 's/ALLOW_USERS=""/ALLOW_USERS="madhu"/' /etc/snapper/configs/root
 chown -R :madhu /.snapshots
 
+echo "----------------"
 btrfs subvolume list /
 echo
 cat /etc/fstab
