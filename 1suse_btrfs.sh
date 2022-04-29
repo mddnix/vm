@@ -13,6 +13,8 @@ btrfs subvolume list /
 echo
 btrfs subvolume get-default /
 echo
+cat /etc/default/grub
+echo
 grubby --info=DEFAULT
 echo
 cat /boot/efi/EFI/fedora/grub.cfg
