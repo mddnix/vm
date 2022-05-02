@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#BTRFS_MOUNT="$(df -h -t btrfs | grep -w '/' | awk '{print $1}')"
 BTRFS_MOUNT="$(df -h --output=source / | grep dev)"
 if [[ -z ${BTRFS_MOUNT} ]] ; then
         exit
