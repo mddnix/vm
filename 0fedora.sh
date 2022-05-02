@@ -22,3 +22,6 @@ systemctl restart sshd
 grub2-editenv - unset menu_auto_hide
 
 grubby --remove-args "rhgb" --update-kernel=ALL
+
+cp -v /home/madhu/.config/monitors.xml /var/lib/gdm/.config/
+chown -v gdm:gdm /var/lib/gdm/.config/monitors.xml
