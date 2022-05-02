@@ -1,6 +1,10 @@
 #!/bin/bash
 
-BTRFS_MOUNT="/dev/vda2"
+BTRFS_MOUNT="$(df -h -t btrfs | grep -w '/' | awk '{print $1}')"
+if [[ -z ${BTRFS_MOUNT} ]] ; then
+        exit
+fi
+
 dnf install -y snapper python3-dnf-plugin-snapper
 snapper -c root create-config /
 echo "UUID=$(lsblk -dno uuid ${BTRFS_MOUNT}) /.snapshots btrfs subvol=root/.snapshots,compress=zstd:1 0 0" >> /etc/fstab
