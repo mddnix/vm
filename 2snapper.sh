@@ -18,6 +18,7 @@ btrfs subvolume list /
 echo
 cat /etc/fstab
 echo
+sleep 2
 lsblk -p ${BTRFS_MOUNT}
 echo
 grep "madhu" /etc/snapper/configs/root
